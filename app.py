@@ -12,13 +12,16 @@ import plotly.graph_objects as go
 @st.cache_resource
 def load_trained_model(model_path='trained_model.pkl'):
     """Load the pre-trained model"""
-    try:
-        with open(model_path, 'rb') as f:
+   try:
+        base_dir = os.path.dirname(__file__)
+        model_path = os.path.join(base_dir, "trained_model.pkl")
+        with open(model_path, "rb") as f:
             model_data = pickle.load(f)
         return model_data
-    except FileNotFoundError:
-        st.error(f"❌ Model file '{model_path}' not found! Please train the model first using 'train_model.py'")
+    except Exception as e:
+        st.error(f"❌ Error loading model: {e}")
         return None
+
 
 
 def preprocess_input(input_data, feature_names):
@@ -221,6 +224,8 @@ def main():
             with col1:
                 st.write(f"**Price per sqft:** ${ensemble_pred/sqft_living:,.2f}")
                 st.write(f"**House Age:** {input_data['house_age']} years")
+                st.write(f"**Renovation Status:** {'Renovated' if input_data['renovated'] else 'Not Renovated'}")
+
                 st.write(f"**Renovation Status:** {'Renovated' if input_data['renovated'] else 'Not Renovated'}")
             
             with col2:
