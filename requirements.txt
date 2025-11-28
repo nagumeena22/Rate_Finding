@@ -1,13 +1,7 @@
-pandas
-numpy
-<<<<<<< HEAD
-scikit-learn
-streamlit
-plotly
-matplotlib
-seaborn
-=======
-streamlit
-scikit-learn
-plotly
->>>>>>> 2653e91acf74790a3d6a9ad28ca8949cde2dce43
+streamlit==1.31.0
+pandas==2.2.2
+numpy==1.26.4
+scikit-learn==1.4.2
+plotly==5.19.0
+matplotlib==3.8.1
+seaborn==0.12.3
