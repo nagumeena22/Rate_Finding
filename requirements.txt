@@ -1,7 +1,13 @@
 pandas
 numpy
+<<<<<<< HEAD
 scikit-learn
 streamlit
 plotly
 matplotlib
 seaborn
+=======
+streamlit
+scikit-learn
+plotly
+>>>>>>> 2653e91acf74790a3d6a9ad28ca8949cde2dce43
