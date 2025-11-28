@@ -12,7 +12,7 @@ import plotly.graph_objects as go
 @st.cache_resource
 def load_trained_model(model_path='trained_model.pkl'):
     """Load the pre-trained model"""
-   try:
+    try:
         base_dir = os.path.dirname(__file__)
         model_path = os.path.join(base_dir, "trained_model.pkl")
         with open(model_path, "rb") as f:
